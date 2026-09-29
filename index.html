@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Flower 🌸</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe6f2, #e8d9ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 35px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(120, 60, 120, 0.2);
+    }
+
+    .flower {
+      font-size: 80px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    h1 {
+      color: #9b3d82;
+      margin: 15px 0 10px;
+      font-size: 40px;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .chat-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input {
+      flex: 1;
+      padding: 15px;
+      border: 2px solid #e5b7d5;
+      border-radius: 12px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 15px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #c94f9d;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #a83d80;
+    }
+
+    #answer {
+      margin-top: 25px;
+      padding: 20px;
+      background: #fff0f8;
+      border-radius: 15px;
+      color: #7b3866;
+      min-height: 60px;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="flower">🌸</div>
+
+    <h1>AI Flower</h1>
+
+    <p>
+      Ask the flower anything and watch it bloom with an answer.
+    </p>
+
+    <div class="chat-box">
+      <input
+        type="text"
+        id="question"
+        placeholder="Ask me something..."
+      >
+
+      <button onclick="askAI()">Ask AI</button>
+    </div>
+
+    <div id="answer">
+      🌱 Your AI answer will appear here...
+    </div>
+
+    <footer>
+      Made with 🌸 and AI
+    </footer>
+
+  </div>
+
+  <script>
+    function askAI() {
+
+      const question = document.getElementById("question").value;
+      const answer = document.getElementById("answer");
+
+      if (question.trim() === "") {
+        answer.innerHTML = "🌱 Please ask me something!";
+        return;
+      }
+
+      // Simple demo responses
+      const q = question.toLowerCase();
+
+      if (q.includes("hello") || q.includes("hi")) {
+        answer.innerHTML = "🌸 Hello! I'm AI Flower. Nice to meet you!";
+      }
+
+      else if (q.includes("flower")) {
+        answer.innerHTML =
+          "🌺 Flowers are beautiful plants that help support ecosystems and pollinators.";
+      }
+
+      else if (q.includes("name")) {
+        answer.innerHTML =
+          "🌸 My name is AI Flower!";
+      }
+
+      else {
+        answer.innerHTML =
+          "🌷 That's an interesting question! I'm a simple demo AI right now.";
+      }
+    }
+  </script>
+
+</body>
+</html>
